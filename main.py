@@ -2,6 +2,8 @@
 
     версия 0.0.8
 
+.
+
 
 """
 from random import choice
