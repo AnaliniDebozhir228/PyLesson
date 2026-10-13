@@ -1,4 +1,4 @@
-from storage import load_file, save_file
+from storage import save_file
 from viwe import show_collection
 from utils import check_confirm
 from core import delete_task, add_task, edit_task
