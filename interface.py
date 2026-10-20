@@ -1,19 +1,29 @@
 import tkinter as tk
-
-
 from view import show_menu
 
-root = tk.Tk()
-root.geometry("300x300")
-frame_menu = tk.Frame(root, bg="Black", width=300, height=400)
 
-def show_all_tasks():
-    show_menu.pack_forget()
+class interface:
+    def __init__(self):
+        self.root = tk.Tk()  # теперь self.root
+        self.root.geometry("300x300")
 
-def create_menu():
-    frame_menu.pack()
-    button_show_task = tk.Button(frame_menu, text="Посмотреть задачи", command=show_menu())
-    button_show_task.pack()
+        self.frame_menu = tk.Frame(self.root, bg="Black", width=300, height=400)
 
-create_menu()
-root.mainloop()
+        def show_all_tasks():
+            print("Показать задачи")
+
+        def create_menu():
+            self.frame_menu.pack()
+            button_show_task = tk.Button(
+                self.frame_menu,
+                text="Посмотреть задачи",
+                command=show_all_tasks  # без скобок!
+            )
+            button_show_task.pack()
+
+        create_menu()  # вызываем меню
+
+
+if __name__ == "__main__":
+    app = interface()
+    app.root.mainloop()
